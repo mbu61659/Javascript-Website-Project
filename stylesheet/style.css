@@ -16,7 +16,9 @@ body {
 }
 
 header {
-	
+	width: 100%;
+	background-image: url("/images/orangeHeader.jpg");
+	padding: 2%;
 }
 
 nav {
