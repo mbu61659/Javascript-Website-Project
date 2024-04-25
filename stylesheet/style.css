@@ -26,12 +26,14 @@ nav {
 }
 
 #navBar {
-	
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
 }
 
 li {
-	
-	
+	list-style-type: none;
 }
 
 a {
