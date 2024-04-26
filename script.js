@@ -54,5 +54,47 @@ function makeNav() {
         navList.appendChild(listItem);
         });
 }
+
+//We're making the menu products for the Pizza Menu by adding in the name, price, and image to be displayed for the potential customer
+//to take a look at.
+const menuItems = [
+    {name: "Pepperoni", price: 8.50, image:"/drippingPizza.jpg"  },
+    {name: "Margherita Basil", price: 12.50, image: "/closeUpPizza.jpg"},
+    {name: "Cheese", price: 4.75, image:"/pizza1.jpg"},
+    {name: "Gourmet Cheese", price: 15.75, image: "/pizza2.jpg"}
+];
+
+//This is the table element which the pizza menu will be displayed.
+const menuTable = document.getElementById("pizzaMenu");
+
+//Function to Create the Pizza Menu...whoo...
+function makePizzaMenu() {
+    //Creating the header row headers.
+    let tableHeader = "<tr><th>Name</th><th>Price</th><th>Image</th></tr>";
+    //Go Through Each Menu Item with a Loop.
+    menuItems.forEach(pizza => {
+        //Create a Row for Each Pizza
+        tableHeader += `
+        <tr>
+            <td>${pizza.name}</td>
+            <td>$${pizza.price.toFixed(2)}</td>
+            <td><img src = "/images/${pizza.image}" alt= "${pizza.name}"></td>
+        </tr>`;
+    });
+    //Set up the Content for the Table.
+    menuTable.innerHTML = tableHeader;
+}
+
+// //This is our starting variables for the form (Form Elements)
+// const contactForm = document.getElementById("contactForm");
+// //Now we need the Event Listener for the Form.
+// contactForm.addEventListener("submit", function(event) {
+//     //Prevent Default from Form Submission
+//     prevent.preventDefault();
+//     //Get the Input Values from the Form.
+
+// })
+
 //Now we're going to use the function (invoke it/call it) to create the nav bars.
 makeNav();
+makePizzaMenu();
