@@ -19,6 +19,7 @@ header {
 	background: linear-gradient(0deg, #FF9800, #6d020b);	
 	padding: 2%;
 	position: relative;
+
 }
 
 .logo {
@@ -102,6 +103,11 @@ img {
 	width: 20%;
 }
 
+tr:nth-of-type(even) {
+    background-color: #f0ddc3;
+}
+
+
 td {
 	width: 20%;
     text-align: center;
@@ -130,3 +136,4 @@ button {
     color: #FFEB3B;
     font-size: 2rem;
 }
+

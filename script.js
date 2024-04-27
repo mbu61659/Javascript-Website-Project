@@ -54,14 +54,15 @@ function makeNav() {
         navList.appendChild(listItem);
         });
 }
+makeNav();
 
 //We're making the menu products for the Pizza Menu by adding in the name, price, and image to be displayed for the potential customer
 //to take a look at.
 const menuItems = [
     {name: "Pepperoni", price: 8.50, image:"/drippingPizza.jpg"  },
     {name: "Margherita Basil", price: 12.50, image: "/closeUpPizza.jpg"},
-    {name: "Cheese", price: 4.75, image:"/pizza1.jpg"},
-    {name: "Gourmet Cheese", price: 15.75, image: "/pizza2.jpg"}
+    {name: "Gourmet Cheese", price: 15.75, image: "/pizza2.jpg"},
+    {name: "Cheese", price: 4.75, image:"/pizza1.jpg"}
 ];
 
 //This is the table element which the pizza menu will be displayed.
@@ -84,17 +85,77 @@ function makePizzaMenu() {
     //Set up the Content for the Table.
     menuTable.innerHTML = tableHeader;
 }
+makePizzaMenu();
 
 // //This is our starting variables for the form (Form Elements)
-// const contactForm = document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
+//Function to Make and Show a Pop Up Window with a Message
+function showPopUp(message) {
+    //Make the Pop Up 
+    const popUp = document.createElement("div");
+    popUp.classList.add("popUp");
+    //Make the Pop Up Content to the Pop Up.
+    const popUpContent = document.createElement("div");
+    popUpContent.classList.add("popUpContent");
+    popUpContent.textContent = (message);
+    //Add the Pop Up Content to the Pop Up.
+    popUp.appendChild(popUpContent);
+    //Add the Pop Up To the Page.
+    document.body.appendChild(popUp);
+    //Close the Pop Up when we click out of it.
+    window.addEventListener("click", function(event) {
+        if (event.target === popUp) {
+            popUp.remove();
+        }
+    });
+}
 // //Now we need the Event Listener for the Form.
-// contactForm.addEventListener("submit", function(event) {
-//     //Prevent Default from Form Submission
-//     prevent.preventDefault();
+contactForm.addEventListener("submit", function(event) {
+    //Prevent Default from Form Submission
+    event.preventDefault();
 //     //Get the Input Values from the Form.
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const zipCode = document.getElementById("zipCode").value.trim();
+    const email = document.getElementById("email").value.trim();
+    
+    //Validate Input with Regular Expressions.
+    const nameRegEx = /^[a-zA-Z] + $/;
+    const zipRegEx = /^d{5}$/;
+    const emailRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-// })
+    //Check if the first name is valid.
+    if (!nameRegEx.test(firstName)) {
+        showPopUp("How's About You Write A Name Next Time?");
+        return;
+    }
 
-//Now we're going to use the function (invoke it/call it) to create the nav bars.
-makeNav();
-makePizzaMenu();
+    //Check if the Last Name is valid.
+    if (!nameRegEx.test(lastName)) {
+        showPopUp("How's About You Write An Actual Last Name Before You Come Here Again! Please...");
+        return;
+    }
+
+    //Check if the City is Valid.
+    if (city === " ") {
+        showPopUp("Ehhhh! It's okay! You're not a cop are yus? Tell Us What City You From");
+        return;
+    }
+
+    //Check if the ZipCode is Valid.
+    if (!zipRegEx.test(zipCode)) {
+        showPopUp("Yas Don't Need to Zip it. Give Us the Real ZipCode and we won't hous' to 'urt yeah!");
+        return;
+    }
+
+    //Check if the Email is valid,
+    if (!emailRegEx.test(emailRegEx)) {
+        showPopUp("I'm not the Feds, you'se can trust me. Send us your REAL email...then we'll talk about the mula...");
+        return;
+    }
+
+    //Send the Form if all validations are good.
+    showPopUp("Ayyye! Atta Boy! The form was sent. Good job, Jimmy...can you call you Jimmy? ");
+    return;
+});
