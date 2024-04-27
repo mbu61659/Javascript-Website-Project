@@ -7,7 +7,7 @@ const navItems = [
 { name: "Home", link: "index.html"},
 { name: "Menu", link: "menu.html"},
 { name: "Contact", link: "contact.html"},
-{ name: "About", link: "about.html"}
+{ name: "Catering", link: "catering.html"}
     
 //Use Shift Alt to duplicate a selection that you highlighted and copied then use
     //the down arrow key to duplicate.
@@ -125,37 +125,53 @@ contactForm.addEventListener("submit", function(event) {
     const zipRegEx = /^d{5}$/;
     const emailRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    //Check if the first name is valid.
-    if (!nameRegEx.test(firstName)) {
-        showPopUp("How's About You Write A Name Next Time?");
-        return;
+    //Check if All Fields Are Accurate/Good to Go.
+    if (firstName.match(nameRegEx) && lastName.match(nameRegEx) && city.match(nameRegEx) && email.match(emailRegEx) && zipCode.match(zipRegEx)) {
+        showPopUp("Ayyye! Atta Boy! The form was sent. Good job, Jimmy...can I call you Jimmy? ");
+    } else {
+        showPopUp("You tried so hard, and got so far, but in the end, you made a mistake! Try again.");
     }
 
-    //Check if the Last Name is valid.
-    if (!nameRegEx.test(lastName)) {
-        showPopUp("How's About You Write An Actual Last Name Before You Come Here Again! Please...");
-        return;
-    }
 
-    //Check if the City is Valid.
-    if (city === " ") {
-        showPopUp("Ehhhh! It's okay! You're not a cop are yus? Tell Us What City You From");
-        return;
-    }
 
-    //Check if the ZipCode is Valid.
-    if (!zipRegEx.test(zipCode)) {
-        showPopUp("Yas Don't Need to Zip it. Give Us the Real ZipCode and we won't hous' to 'urt yeah!");
-        return;
-    }
 
-    //Check if the Email is valid,
-    if (!emailRegEx.test(emailRegEx)) {
-        showPopUp("I'm not the Feds, you'se can trust me. Send us your REAL email...then we'll talk about the mula...");
-        return;
-    }
+
+
+    // //Check if the first name is valid.
+    // if (!nameRegEx.test(firstName)) {
+    //     showPopUp("How's About You Write A Name Next Time?");
+    //     return;
+    // }
+
+    // //Check if the Last Name is valid.
+    // if (!nameRegEx.test(lastName)) {
+    //     showPopUp("How's About You Write An Actual Last Name Before You Come Here Again! Please...");
+    //     return;
+    // }
+
+    // //Check if the City is Valid.
+    // if (city === " ") {
+    //     showPopUp("Ehhhh! It's okay! You're not a cop are yus? Tell Us What City You From");
+    //     return;
+    // }
+
+    // //Check if the ZipCode is Valid.
+    // if (!zipRegEx.test(zipCode)) {
+    //     showPopUp("Yas Don't Need to Zip it. Give Us the Real ZipCode and we won't hous' to 'urt yeah!");
+    //     return;
+    // }
+
+    // //Check if the Email is valid,
+    // if (!emailRegEx.test(email)) {
+    //     showPopUp("I'm not the Feds, you'se can trust me. Send us your REAL email...then we'll talk about the mula...");
+    //     return;
+    // }
 
     //Send the Form if all validations are good.
-    showPopUp("Ayyye! Atta Boy! The form was sent. Good job, Jimmy...can you call you Jimmy? ");
-    return;
+    // showPopUp("Ayyye! Atta Boy! The form was sent. Good job, Jimmy...can you call you Jimmy? ");
+    // return;
 });
+
+
+
+

@@ -99,6 +99,17 @@ p {
     font-style: italic;
 }
 
+.services {
+    background-color: #ce6603;
+    padding: 2%;
+    border-radius: 22px;
+}
+
+.service {
+    margin: 1% 0;
+    color: white;
+}
+
 img {
 	width: 20%;
 }
