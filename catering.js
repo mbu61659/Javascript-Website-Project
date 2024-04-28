@@ -45,7 +45,7 @@ navLinks.forEach(link => {
         }
         return data;
       }
-  
+      const barColors = ['orangeRed', 'yellow', 'orangeRed', 'blue', 'orangeRed', 'orangeRed', 'orangeRed', 'orangeRed', 'orangeRed', 'orangeRed', 'orangeRed', 'orangeRed'];
       // Create initial chart
       const chartX = document.getElementById('myChart').getContext('2d');
       const chart = new Chart(chartX, {
@@ -55,7 +55,7 @@ navLinks.forEach(link => {
           datasets: [{
             label: 'Pizza Sales',
             data: createData(),
-            backgroundColor: 'orangered',
+            backgroundColor: barColors,
             borderColor: 'white',
             borderWidth: 1
           }]
