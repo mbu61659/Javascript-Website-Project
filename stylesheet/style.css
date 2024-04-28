@@ -75,9 +75,8 @@ a {
 }
 
 #mainPage {
-	background-image:url(./images/pizzabanner.jpg);
+	background-image:url(/images/pizzabanner.jpg);
 	padding: 9%;
-    background-color: #efbe79;
 }
 
 #content {

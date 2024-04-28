@@ -45,7 +45,6 @@ const progressBar = document.getElementById("progressBar");
 
 //Add the Style for the Progress Bar
 progressBar.style.width = customerRating + "%";
-
 const satisfactionLabel = `${customerRating}%`;
 
 // Create a new div element for the label
