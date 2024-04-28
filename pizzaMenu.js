@@ -40,10 +40,10 @@ navLinks.forEach(link => {
 
 // Define the pizza menu items
 const menuItems = [
-    {name: "Pepperoni", price: 8.50, image:"/drippingPizza.jpg"  },
-    {name: "Margherita Basil", price: 12.50, image: "/closeUpPizza.jpg"},
-    {name: "Gourmet Cheese", price: 15.75, image: "/pizza2.jpg"},
-    {name: "Cheese", price: 4.75, image:"/pizza1.jpg"}
+    {name: "Pepperoni", price: 8.50, image:"drippingPizza.jpg"  },
+    {name: "Margherita Basil", price: 12.50, image: "closeUpPizza.jpg"},
+    {name: "Gourmet Cheese", price: 15.75, image: "pizza2.jpg"},
+    {name: "Cheese", price: 4.75, image:"pizza1.jpg"}
 ];
 
 // Get the table element for the pizza menu
