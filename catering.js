@@ -37,23 +37,34 @@ navLinks.forEach(link => {
     link.addEventListener('click', handleClicks);
 });
 
-// Progress Bar Code to Calculate Random Customer Satisfaction Rating from 55% to 95%.
-const customerRating = Math.floor(Math.random() * (95 - 55 + 1)) + 55;
-
-//Set up the for the Progress Bar.
-const progressBar = document.getElementById("progressBar");
-
-//Add the Style for the Progress Bar
-progressBar.style.width = customerRating + "%";
-
-const satisfactionLabel = `${customerRating}%`;
-
-// Create a new div element for the label
-const labelElement = document.createElement('div');
-labelElement.textContent = satisfactionLabel;
-
-// Add a class to the label for styling
-labelElement.classList.add('progressLabel');
-
-// Add the label to the progress bar
-progressBar.appendChild(labelElement);
+//Create Random Data for 12 Data Points
+      function createData() {
+        const data = [];
+        for (let i = 0; i < 12; i++) {
+          data.push(Math.floor(Math.random() * 100));
+        }
+        return data;
+      }
+  
+      // Create initial chart
+      const chartX = document.getElementById('myChart').getContext('2d');
+      const chart = new Chart(chartX, {
+        type: 'bar',
+        data: {
+          labels: Array.from({ length: 12 }, (_, i) => `Day ${i + 1}`),
+          datasets: [{
+            label: 'Pizza Sales',
+            data: createData(),
+            backgroundColor: 'orangered',
+            borderColor: 'white',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });

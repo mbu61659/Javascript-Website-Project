@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>Catering Services (Not Associated with Cats)</title>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
 	<link rel = "stylesheet" href = "stylesheet/style.css">
 	<link rel="icon" href="images/favicon.png" type="image/x-icon">
-	<script src = "script2.js" defer></script>
+	<script src = "catering.js" defer></script>
 </head>
 <body>
 	<div class = "page"> 
@@ -20,14 +23,22 @@
 			<main id = "mainPage">
 				<div id="content">
 					<h2>Products and Services</h2>
-					<p>Here at Wanna Pizza Me, we offer the best services and products that pizza restaurants are known for.</p>
+					<p>Here at Wanna Pizza Me, we offer the best services and products that pizza restaurants are known for:</p>
                     <ul class = "services">
-                        <li class = "service">Waste Management (We Aim to Ensure Proper Disposal...), Hours of Operation: 12:00 AM to 3:00 AM</li>
-                        <li class = "service">Pizza Protection Services Bundle (Comes with Armed Men), Hours of Operation: 24/7 </li>
-                        <li class = "service">Pizza Insurance (Ask about our Current Bundles!), Hours of Operation: 8:00 AM to 8:00 PM </li>
-                        <li class = "service">Cremation Services (For the Pizza Of Course...), Hours of Operation: 2:00 AM to 2:15 AM </li>
+                        <li class = "service">Waste Management (We Aim to Ensure Proper Disposal...) Hours of Operation: 12:00 AM to 3:00 AM</li>
+                        <li class = "service">Pizza Protection Services Bundle (Comes with Armed Men) Hours of Operation: 24/7 </li>
+                        <li class = "service">Pizza Insurance (Ask about our Current Bundles!) Hours of Operation: 8:00 AM to 8:00 PM </li>
+                        <li class = "service">Cremation Services (For the Pizza Of Course...) Hours of Operation: 12:00 AM to 3:00 AM  </li>
+                        <li class = "service">Customer Service Satisfaction Team Hours of Operation: 8:00 AM to 8:01 AM </li>
+                        <li class = "service">Undercover Mob Boss Meal Services Hours of Operation: 2:00 AM to 4:00 AM  </li>
+                        <li class = "service">Pizza Hitman Delivery Services Hours of Operation: 2:00 AM to 3:00 AM  </li>
+                        <li class = "service">Pizza Supply Van Delivery (For Your Bulk Pizza Needs...and others) Hours of Operation: 4:00 AM to 6:00 AM  </li>
+                        <li class = "service">Pizza Witness Protection Program Service Hours of Operation: 24/7 </li>
+                        <li class = "service">Expedited Pizza Clean-Up Service (For speedy "pizza clean-ups") Hours of Operation: 12:00 AM to 4:00 AM </li>
+                        <li class = "service">General Services (For Those Hard to Choose Pizza Toppings) Hours of Operation: 8:00 AM to 12:00 PM  </li>
                     </ul>
 				</div>
+				<canvas id="myChart" style="width:100%;max-width:700px;height:500px;"></canvas>
 			</main>
 	</div>
 </body>

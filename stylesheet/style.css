@@ -148,11 +148,22 @@ button {
     font-size: 2rem;
 }
 
-#progressBar {
+.progressBackground {
+    position: relative;
+    width: 100%;
+    border: 2px solid;
     height: 50px;
-    width: 58%;
-    background-color: orangered;
     margin-top: 4%;
+    background-color: #f7cc95;
+}
+
+#progressBar {
+    background-color: orangered;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-self: flex-start;
+    height: 47px;
 }
 
 .progressLabel {
@@ -168,4 +179,16 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.videoBox {
+    height: 247px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    width: 25%;
 }
